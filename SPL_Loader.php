@@ -1,6 +1,11 @@
 <?php
 namespace Clicalmani\Container;
 
+/**
+ * Holds the root directory
+ * 
+ * @var string $root_path Root path
+ */
 global $root_path;
 
 class SPL_Loader 
