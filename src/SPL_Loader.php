@@ -13,10 +13,16 @@ class SPL_Loader
     private $bindings = [
         'App/' => 'app/',
         'Http/' => 'http/',
+        'Requests/' => 'requests/',
         'Models/' => 'models/',
         'Middlewares/' => 'middlewares/',
         'Controllers/' => 'controllers/',
-        'Authenticate/' => 'authenticate/'
+        'Authenticate/' => 'authenticate/',
+        'Providers/' => 'providers/',
+        'Database/' => 'database/',
+        'Factories/' => 'factories/',
+        'Seeders/' => 'seeders/',
+        'Test/' => 'test/'
     ];
 
     public function __construct(private $root_path)
