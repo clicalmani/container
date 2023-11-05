@@ -25,7 +25,7 @@ class SPL_Loader
         'Test/' => 'test/'
     ];
 
-    public function __construct(private $root_path)
+    public function __construct(private ?string $root_path = null)
     {
         global $root_path;
 
