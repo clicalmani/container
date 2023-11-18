@@ -8,6 +8,8 @@ namespace Clicalmani\Container;
  */
 global $root_path;
 
+$root_path = dirname( dirname( dirname( dirname( __DIR__ ) ) ) );
+
 class SPL_Loader 
 {
     private $bindings = [
@@ -27,9 +29,6 @@ class SPL_Loader
 
     public function __construct(private ?string $root_path = null)
     {
-        global $root_path;
-
-        $root_path = $this->root_path;
         spl_autoload_register(fn($className) => $this->load($className)); // Registers the autoloader
     }
 
