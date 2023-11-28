@@ -48,7 +48,7 @@ class SPL_Loader
         
         $fullFileName = $this->bind($this->root_path . '/' . $fileName);
         
-        if ( file_exists($fullFileName) ) {
+        if ( @ file_exists($fullFileName) ) {
             require_once $fullFileName;
         }
     }
