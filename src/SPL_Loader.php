@@ -10,6 +10,12 @@ global $root_path;
 
 $root_path = dirname( dirname( dirname( dirname( __DIR__ ) ) ) );
 
+/**
+ * Class SPL_Loader
+ * 
+ * @package Clicalmani\Container
+ * @author @clicalmani
+ */
 class SPL_Loader 
 {
     private $bindings = [
@@ -24,15 +30,28 @@ class SPL_Loader
         'Database/' => 'database/',
         'Factories/' => 'factories/',
         'Seeders/' => 'seeders/',
-        'Test/' => 'test/'
+        'Test/' => 'test/',
+        'Events' => 'events',
+        'Commands' => 'commands'
     ];
 
+    /**
+     * Constructor
+     * 
+     * @param ?string $root_path
+     */
     public function __construct(private ?string $root_path = null)
     {
         spl_autoload_register(fn($className) => $this->load($className)); // Registers the autoloader
     }
 
-    public function load(string $className)
+    /**
+     * Load a class
+     * 
+     * @param string $className
+     * @return void
+     */
+    public function load(string $className) : void
     {
         $fileName  = '';
         $namespace = '';
@@ -53,7 +72,13 @@ class SPL_Loader
         }
     }
 
-    public function bind($fullFileName)
+    /**
+     * Bind dependence
+     * 
+     * @param string $fullFileName
+     * @return string
+     */
+    public function bind(string $fullFileName) : string
     {
         foreach ($this->bindings as $key => $value) {
             $fullFileName = str_replace($key, $value, $fullFileName);
