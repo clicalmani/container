@@ -19,20 +19,7 @@ $root_path = dirname( dirname( dirname( dirname( __DIR__ ) ) ) );
 class SPL_Loader 
 {
     private $bindings = [
-        'App/' => 'app/',
-        'Http/' => 'http/',
-        'Requests/' => 'requests/',
-        'Models/' => 'models/',
-        'Middlewares/' => 'middlewares/',
-        'Controllers/' => 'controllers/',
-        'Authenticate/' => 'authenticate/',
-        'Providers/' => 'providers/',
-        'Database/' => 'database/',
-        'Factories/' => 'factories/',
-        'Seeders/' => 'seeders/',
-        'Test/' => 'test/',
-        'Events' => 'events',
-        'Commands' => 'commands'
+        //
     ];
 
     /**
